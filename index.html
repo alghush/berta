@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+    </noscript>
+    <link rel="icon" type="image/png" href="/img/android-chrome-512x512.png">
+    <title>BERTA</title>
+</head>
+
+<body>
+    <!-- El video que queda de fondo para siempre -->
+
+    <video id="video-cena" autoplay muted loop playsinline class="video-background activo">
+        <source src="/video/bertavideo.mp4 " type="video/mp4">
+    </video>
+
+    <main class="content-wrapper">
+        <section class="splash">
+            <div class="splash__logo">
+                <img id="logo-principal" src="/img/logo.png" alt="Logo Berta Obrador de Masas">
+            </div>
+
+            <p class="splash__sub">Masa artesanal, todos los días.</p>
+            <div class="scroll-arrow">↓</div>
+
+            <div class="splash__btns">
+
+                <!-- CARTA -->
+                <details class="splash__details">
+                    <summary class="splash__btn splash__btn--menu">
+                        <span class="splash__btn-left">
+                            <span class="splash__btn-icon"><i class="ti ti-notebook"></i></span>
+                            CARTA
+                        </span>
+                        
+                    </summary>
+
+                    <div class="splash__acordeon-inner">
+                        <div class="splash__acordeon-wrap">
+                            <a class="splash__acordeon-item" href="/page/home.html#panaderia-section">
+                                <i class="ti ti-bread"></i> RESTAURANT
+                            </a>
+                            <a class="splash__acordeon-item" href="/page/home.html#pasteleria-section">
+                                <i class="ti ti-cake"></i> BEBIDAS
+                            </a>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- REDES -->
+                <a class="splash__btn" href="https://www.instagram.com/PLACEHOLDER/" target="_blank">
+                    <span class="splash__btn-left">
+                        <span class="splash__btn-icon"><i class="ti ti-brand-instagram"></i></span>
+                        REDES
+                    </span>
+                </a>
+
+                <!-- PEDIDOS ONLINE 
+                <a class="splash__btn splash__btn--ins"
+                    href="https://www.pedidosya.com.ar/restaurantes/rosario/PLACEHOLDER" target="_blank">
+                    <span class="splash__btn-icon"><img class="pedidoya" src="/img/pedidoya.png" alt="PedidosYa"></span>
+                    Hace tu pedido
+                </a>
+                -->
+
+                <!-- RESERVAS -->
+                <button type="button" class="splash__btn" onclick="abrirModalReserva()">
+                    <span class="splash__btn-left">
+                        <span class="splash__btn-icon"><i class="ti ti-calendar"></i></span>
+                        RESERVAS
+                    </span>
+                </button>
+
+                <!-- UBICACION -->
+                <a class="splash__btn " href="https://www.google.com/maps?q=PLACEHOLDER" target="_blank">
+                    <span class="splash__btn-icon"><i class="ti ti-map-pin"></i></span>
+                    UBICACION
+                </a>
+
+            </div>
+
+            <a class="splash__skip" href="/page/home.html">Entrar a la página →</a>
+
+        </section>
+    </main>
+</body>
+
+</html>

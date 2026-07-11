@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+main,
+div,
+ul,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --color-principal: #22391789;
+    --color-traslucer: #faf6f086;
+    --bc-color: #e2eaff;
+    --text-color: #2b2420dd;
+    --text-color-dark: #2b2420;
+    --shadow-color: #5d5d5dc8;
+    --text-secundary: #2b2420;
+    --color-secundary: #8a7d6e;
+
+    --color-primary: #b5552689;
+    --color-hover: #223917f7;
+    --color-text: #2b2420;
+
+    --color-fondo-productos: #f3ece2;
+    --color-whatsapp: #25d365;
+    --color-whatsapp-trans: #25d36590;
+    --color-productos-title: #b45526dc;
+    --color-gradient-1: #faf6f0a2;
+    --color-gradient-2: #f3ece27c;
+    --color-negro: #2b2420;
+    --color-blanco: #fff;
+
+    --bg-scroll: #2b242026;
+
+    /*--- catering ---*/
+    --color-gold: #c9a84c;
+    --color-gold-light: #e8c97a;
+    --color-gold-trans: #c9a84c30;
+}
+
+
+/*--- VIDEO DE FONDO — usado en index.html y home.html ---*/
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    display: none;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.video-background.activo {
+    display: block;
+    opacity: 1;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+
+
+/*--- MODAL RESERVA GENERAL — usado en index.html y home.html ---*/
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.activo {
+    display: flex;
+}
+
+.modal {
+    background: var(--color-principal);
+    border: 1.5px solid var(--color-hover);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 440px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: var(--color-secundary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--color-blanco);
+}
+
+.modal-titulo {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--color-hover);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.modal-subtitulo {
+    font-size: 0.75rem;
+    color: var(--color-secundary);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--color-hover);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 10px 14px;
+    color: var(--color-blanco);
+    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--color-hover);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.modal-btn {
+    width: 100%;
+    background: var(--color-hover);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 50px;
+    padding: 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.sector-btns {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.sector-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: var(--color-secundary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sector-btn.activo {
+    border-color: var(--color-hover);
+    color: var(--color-hover);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 10px 14px;
+    color: var(--color-blanco);
+    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.form-group select:focus {
+    border-color: var(--color-hover);
+}
+
+.form-group select option {
+    background: var(--color-principal);
+    color: var(--color-blanco);
+}
