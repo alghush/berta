@@ -87,6 +87,16 @@ body {
 
 /*--- MODAL RESERVA GENERAL — usado en index.html y home.html ---*/
 
+.reserva__logo img {
+    width: 70px;
+    overflow: hidden;
+    object-fit: cover;
+    margin:1rem;
+    filter: drop-shadow(0 0 12px var(--color-hover)) drop-shadow(0 0 24px var(--color-hover));
+}
+
+
+
 .modal-overlay {
     display: none;
     position: fixed;
@@ -132,14 +142,14 @@ body {
     font-size: 1rem;
     font-weight: 800;
     letter-spacing: 2px;
-    color: var(--color-hover);
+    color: var(--color-blanco);
     text-transform: uppercase;
     margin-bottom: 0.3rem;
 }
 
 .modal-subtitulo {
     font-size: 0.75rem;
-    color: var(--color-secundary);
+    color: rgba(255, 255, 255, 0.65);
     margin-bottom: 1.5rem;
 }
 
@@ -152,7 +162,7 @@ body {
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: var(--color-hover);
+    color: var(--color-blanco);
     text-transform: uppercase;
     margin-bottom: 0.4rem;
 }
@@ -220,7 +230,7 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 10px;
-    color: var(--color-secundary);
+    color: rgba(255, 255, 255, 0.75);
     font-size: 0.8rem;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
@@ -228,10 +238,12 @@ body {
     transition: all 0.2s;
 }
 
+
+
 .sector-btn.activo {
-    border-color: var(--color-hover);
-    color: var(--color-hover);
-    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-blanco);
+    color: var(--color-blanco);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .form-group select {

@@ -1,4 +1,8 @@
-
+/* ============================================================
+   INDEX.CSS — Estilos exclusivos de index.html (landing/splash)
+   Requiere que style.css esté cargado antes (variables :root,
+   video-background, modal reserva, etc.)
+   ============================================================ */
 
 .content-wrapper {
     margin-top: 25px;
@@ -17,23 +21,28 @@
 }
 
 .scroll-arrow {
-    font-size: 3rem;
+    width: 32px;
+    height: 32px;
     color: var(--color-blanco);
     animation: bounce 2s infinite;
-    margin-top: 1rem;
+    margin: 1rem;
+
+}
+
+.scroll-arrow svg {
+    width: 100%;
+    height: 100%;
 }
 
 .splash__logo {
-    width: 110px;
+    width: auto;
     height: 110px;
-    border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--color-blanco);
-    background: var(--color-hover);
-    margin-bottom: 1rem;
-    box-shadow: 0 0 30px #00000040;
-    transition: opacity 0.8s ease;
+    object-fit: cover;
+    filter: drop-shadow(0 0 12px var(--color-hover)) drop-shadow(0 0 24px var(--color-hover));
 }
+
+
 
 .splash__logo img {
     width: 100%;
@@ -41,44 +50,37 @@
     object-fit: cover;
 }
 
-.splash__title {
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--color-blanco);
-    letter-spacing: 5px;
-    filter: drop-shadow(0px 0px 15px var(--color-hover));
-    margin-bottom: 0.3rem;
-}
-
 .splash__sub {
     font-size: 1rem;
     color: var(--color-blanco);
     filter: drop-shadow(0px 0px 20px #00000090);
     text-align: center;
+    padding-top: 1rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 0.8rem;
 }
 
+/*--- BOTONES ---*/
+
 .splash__btns {
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
+    text-align: center;
+    gap: 0.6rem;
     width: 100%;
     max-width: 320px;
 }
 
-/* Base sólida — todos los botones parten de acá, sin transparencia */
 .splash__btn {
-    display: flex;
+    display: grid;
+    grid-template-columns: 28px 1fr 28px;
     align-items: center;
-    justify-content: center;
-    text-align: center;
     gap: 12px;
-    margin-bottom: 0.4rem;
     padding: 12px 18px;
-    border-radius: 6px;
+    border-radius: 10px;
     text-decoration: none;
+    text-align: center;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.3px;
@@ -88,33 +90,32 @@
     width: 100%;
     background: var(--color-hover);
     color: var(--color-blanco);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
 }
 
 .splash__btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px #00000040;
     background: var(--color-negro);
-    color: var(--color-blanco);
 }
 
 .splash__btn-icon {
     width: 28px;
     height: 28px;
     border-radius: 6px;
-    background: var(--color-fondo-productos);
+    background: rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
     flex-shrink: 0;
-    color: var(--color-hover);
-    transition: background 0.2s ease, color 0.2s ease;
+    color: var(--color-blanco);
+    transition: background 0.2s ease;
 }
 
 .splash__btn:hover .splash__btn-icon {
-    background: var(--color-blanco);
-    color: var(--color-hover);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .splash__btn-icon img {
@@ -122,72 +123,35 @@
     height: 15px;
 }
 
-.splash__btn-left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 12px;
+.splash__arrow {
+    font-size: 1rem;
+    color: inherit;
+    transition: transform 0.3s ease;
 }
 
-
-/* REDES — antes faltaba esta regla, quedaba con estilo default del navegador */
-.splash__btn--redes {
-    background: var(--color-blanco);
-    color: var(--color-negro);
-}
-
-.splash__btn--redes:hover {
-    background: var(--color-hover);
-    color: var(--color-blanco);
-}
-
-.splash__btn--ins {
-    background: var(--color-blanco);
-    color: var(--color-negro);
-}
-
-.splash__btn--ins:hover {
-    background: var(--color-hover);
-    color: var(--color-blanco);
-}
-
+/* Botones tipo acordeón (CARTA) o acción (RESERVAS) — flecha fija a la derecha */
 .splash__btn--menu {
     position: relative;
 }
 
-.splash__btn--ubi {
-    background: var(--color-blanco);
-    color: var(--color-negro);
+.splash__btn--menu .splash__arrow {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-/*--- ACORDEÓN SPLASH — estado horario (activo/proxima) ---*/
 
-.splash__acordeon-item.activo {
-    background: var(--color-hover);
-    border-left: 3px solid var(--color-blanco);
-    color: var(--color-blanco);
+.splash__acordeon-item {
+    justify-content: center;
+    text-align: center;
 }
 
-.splash__acordeon-item.activo:hover {
-    background: var(--color-hover);
-    color: var(--color-blanco);
-}
-
-.splash__acordeon-item.proxima {
-    background: var(--color-fondo-productos);
-    color: var(--color-secundary);
-}
-
-.splash__acordeon-item.proxima:hover {
-    background: var(--color-hover);
-    color: var(--color-blanco);
-}
+/*--- ACORDEÓN (details/summary) — usado por CARTA ---*/
 
 .splash__details {
     width: 100%;
     max-width: 320px;
-    
 }
 
 .splash__details summary {
@@ -198,6 +162,9 @@
     display: none;
 }
 
+.splash__details[open] .splash__btn--menu .splash__arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
 
 .splash__acordeon-inner {
     overflow: hidden;
@@ -255,7 +222,6 @@
 .splash__acordeon-item:hover i {
     color: var(--color-blanco);
 }
-
 
 /*--- SKIP — link "Entrar a la página" ---*/
 

@@ -37,61 +37,108 @@
             </div>
 
             <p class="splash__sub">Masa artesanal, todos los días.</p>
-            <div class="scroll-arrow">↓</div>
-
+            <div class="scroll-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12.014 21.514v-3.75" />
+                    <path
+                        d="M5.93 9.504l-.43 1.604c-.712 2.659 .866 5.391 3.524 6.105c.997 .268 1.993 .535 2.99 .801v-3.44c-.164 -2.105 -1.637 -3.879 -3.676 -4.426l-2.408 -.644z" />
+                    <path
+                        d="M13.744 11.164c.454 -.454 .815 -.994 1.061 -1.587c.246 -.594 .372 -1.23 .372 -1.873c0 -.643 -.126 -1.279 -.372 -1.872c-.246 -.594 -.606 -1.133 -1.061 -1.588l-1.73 -1.73l-1.73 1.73c-.454 .454 -.815 .994 -1.06 1.588c-.246 .594 -.372 1.23 -.373 1.872c0 .643 .127 1.279 .373 1.873c.246 .594 .606 1.133 1.06 1.587" />
+                    <path
+                        d="M18.099 9.504l.43 1.604c.712 2.659 -.866 5.391 -3.525 6.105c-.997 .268 -1.994 .535 -2.99 .801v-3.44c.164 -2.105 1.637 -3.879 3.677 -4.426l2.408 -.644z" />
+                </svg>
+            </div>
             <div class="splash__btns">
 
                 <!-- CARTA -->
                 <details class="splash__details">
                     <summary class="splash__btn splash__btn--menu">
-                        <span class="splash__btn-left">
-                            <span class="splash__btn-icon"><i class="ti ti-notebook"></i></span>
-                            CARTA
-                        </span>
-                        
+                        <span class="splash__btn-icon"><i class="ti ti-notebook"></i></span>
+                        CARTA
+                        <i class="ti ti-chevron-down splash__arrow"></i>
                     </summary>
 
                     <div class="splash__acordeon-inner">
                         <div class="splash__acordeon-wrap">
                             <a class="splash__acordeon-item" href="/page/home.html#panaderia-section">
-                                <i class="ti ti-bread"></i> RESTAURANT
+                                <i class="ti ti-bread"></i>Restaurant
                             </a>
                             <a class="splash__acordeon-item" href="/page/home.html#pasteleria-section">
-                                <i class="ti ti-cake"></i> BEBIDAS
+                                <i class="ti ti-cake"></i> Bebidas
                             </a>
                         </div>
                     </div>
                 </details>
 
                 <!-- REDES -->
-                <a class="splash__btn" href="https://www.instagram.com/PLACEHOLDER/" target="_blank">
-                    <span class="splash__btn-left">
-                        <span class="splash__btn-icon"><i class="ti ti-brand-instagram"></i></span>
-                        REDES
-                    </span>
+                <a class="splash__btn splash__btn--redes" href="https://www.instagram.com/PLACEHOLDER/" target="_blank">
+                    <span class="splash__btn-icon"><i class="ti ti-brand-instagram"></i></span>
+                    REDES
                 </a>
 
-                <!-- PEDIDOS ONLINE 
-                <a class="splash__btn splash__btn--ins"
-                    href="https://www.pedidosya.com.ar/restaurantes/rosario/PLACEHOLDER" target="_blank">
-                    <span class="splash__btn-icon"><img class="pedidoya" src="/img/pedidoya.png" alt="PedidosYa"></span>
+                <!-- PEDIDOS -->
+                <a class="splash__btn splash__btn--ins" href="https://wa.me/PLACEHOLDER" target="_blank">
+                    <span class="splash__btn-icon"><i class="ti ti-moped"></i></span>
                     Hace tu pedido
                 </a>
-                -->
-
                 <!-- RESERVAS -->
-                <button type="button" class="splash__btn" onclick="abrirModalReserva()">
-                    <span class="splash__btn-left">
-                        <span class="splash__btn-icon"><i class="ti ti-calendar"></i></span>
-                        RESERVAS
-                    </span>
+                <button type="button" class="splash__btn splash__btn--menu" onclick="abrirModalReserva()">
+                    <span class="splash__btn-icon"><i class="ti ti-calendar"></i></span>
+                    RESERVAS
                 </button>
 
                 <!-- UBICACION -->
-                <a class="splash__btn " href="https://www.google.com/maps?q=PLACEHOLDER" target="_blank">
+                <a class="splash__btn splash__btn--ubi" href="https://www.google.com/maps?q=PLACEHOLDER"
+                    target="_blank">
                     <span class="splash__btn-icon"><i class="ti ti-map-pin"></i></span>
-                    UBICACION
+                    UBICACIÓN
                 </a>
+
+                    <!-- ==========================================
+        MODAL RESERVAS GENERAL
+        Se abre desde el botón RESERVAR del header
+========================================== -->
+    <div class="modal-overlay" id="modal-reserva-overlay" onclick="cerrarModalReserva()">
+        <div class="modal" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="cerrarModalReserva()">✕</button>
+            <h2 class="modal-titulo">RESERVAR</h2>
+            <div class="reserva__logo">
+                <img id="logo-" src="/img/logo.png" alt="Logo Berta Obrador de Masas">
+            </div>
+            <div class="modal-form">
+                <div class="form-group"><label>Tu nombre</label><input type="text" id="reserva-nombre"
+                        placeholder="Nombre y apellido"></div>
+                <div class="form-group"><label>Fecha</label><input type="date" id="reserva-fecha"></div>
+                <div class="form-group">
+                    <label>Turno</label>
+                    <select id="reserva-turno">
+                        <option value="" disabled selected>Elegí un turno</option>
+                        <option value="Desayuno">Almuerzo</option>
+                        <option value="Cena">Cena</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>Adultos</label><input type="number" id="reserva-adultos"
+                            placeholder="0" min="0"></div>
+                    <div class="form-group"><label>Niños (sillas altas)</label><input type="number" id="reserva-ninos" placeholder="0"
+                            min="0"></div>
+                </div>
+                <div class="form-group">
+                    <label>Sector</label>
+                    <div class="sector-btns">
+                        <button class="sector-btn activo" onclick="elegirSectorReserva('Adentro', this)">
+                            <i class="ti ti-building"></i> Adentro
+                        </button>
+                        <button class="sector-btn" onclick="elegirSectorReserva('Afuera', this)">
+                            <i class="ti ti-tree"></i> Afuera
+                        </button>
+                    </div>
+                </div>
+                <button class="modal-btn" onclick="enviarReserva()"><i class="ti ti-brand-whatsapp"></i> CONFIRMAR
+                    RESERVA</button>
+            </div>
+        </div>
 
             </div>
 
@@ -100,5 +147,6 @@
         </section>
     </main>
 </body>
+<script src="/js/script.js"></script>
 
 </html>
