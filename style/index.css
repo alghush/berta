@@ -35,10 +35,9 @@
 }
 
 .splash__logo {
-    width: auto;
-    height: 110px;
-    overflow: hidden;
-    object-fit: cover;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
     filter: drop-shadow(0 0 12px var(--color-hover)) drop-shadow(0 0 24px var(--color-hover));
 }
 
@@ -46,8 +45,9 @@
 
 .splash__logo img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px var(--color-hover)) drop-shadow(0 0 24px var(--color-hover));
 }
 
 .splash__sub {

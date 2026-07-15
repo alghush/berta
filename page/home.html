@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/home.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>BERTA</title>
+</head>
+<body>
+    <!-- El video que queda de fondo para siempre -->
+
+    <video id="video-cena" autoplay muted loop playsinline class="video-background activo">
+        <source src="/video/bertavideo.mp4 " type="video/mp4">
+    </video>
+
+<section class="menu" id="carta">
+    <h2 class="menu__title">Nuestra Carta</h2>
+
+    <!-- ============ ENTRADAS ============ -->
+    <details class="menu__categoria" id="entradas-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Entradas</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+            <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/provoleta.jpg" alt="Provoleta" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Provoleta</h4>
+<p class="menu__card-desc">Queso provolone fundido, acompañado de pesto de tomates, rúcula y almendras.</p>
+                    <span class="menu__card-precio" id="price-entradas-provoleta">$15.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/croquetas-de-espinaca.jpg" alt="Croquetas de Espinaca" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Croquetas de Espinaca</h4>
+<p class="menu__card-desc">Acompañadas de Alioli de la casa.</p>
+                    <span class="menu__card-precio" id="price-entradas-croquetas-de-espinaca">$12.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/burrata.jpg" alt="Burrata" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Burrata</h4>
+<p class="menu__card-desc">Burrata, pesto genovés, tostón de pan negro, tomates secos y jamón crudo.</p>
+                    <span class="menu__card-precio" id="price-entradas-burrata">$20.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/carpaccio-de-langostinos.jpg" alt="Carpaccio de Langostinos" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Carpaccio de Langostinos</h4>
+<p class="menu__card-desc">Lámina de langostinos macerados en jugo de lima, alcaparras, lascas de parmesano y pimentón ahumado.</p>
+                    <span class="menu__card-precio" id="price-entradas-carpaccio-de-langostinos">$14.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/empanada-de-carne.jpg" alt="Empanada de Carne" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Empanada de Carne</h4>
+<p class="menu__card-desc">Carne de ternera braseada con salsa criolla.</p>
+                    <span class="menu__card-precio" id="price-entradas-empanada-de-carne">$4.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/empanada-de-espinaca.jpg" alt="Empanada de Espinaca" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Empanada de Espinaca</h4>
+<p class="menu__card-desc">Espinaca y Mozzarella.</p>
+                    <span class="menu__card-precio" id="price-entradas-empanada-de-espinaca">$4.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/frittin-napolitano.jpg" alt="Frittin Napolitano" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Frittin Napolitano</h4>
+<p class="menu__card-desc">Masa pizza frita, salsa de tomate y parmesano.</p>
+                    <span class="menu__card-precio" id="price-entradas-frittin-napolitano">$10.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/tabla-de-fiambres.jpg" alt="Tabla de Fiambres" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Tabla de Fiambres</h4>
+<p class="menu__card-desc">Jamón crudo, queso sardo macerado, queso brie, queso azul, mortadela con pistacho, aceitunas y frutos secos.</p>
+                    <span class="menu__card-precio" id="price-entradas-tabla-de-fiambres">$26.000</span>
+                </div>
+            </article>
+            </div>
+        </div>
+    </details>
+
+    <!-- ============ PIZZAS ============ -->
+    <details class="menu__categoria" id="pizzas-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Pizzas</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Blancas</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/quattro-formaggi.jpg" alt="Quattro Formaggi" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Quattro Formaggi</h4>
+<p class="menu__card-desc">Aceite de oliva, fior di latte, parmesano, gorgonzola y roquefort.</p>
+                    <span class="menu__card-precio" id="price-pizzas-quattro-formaggi">$18.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/patate.jpg" alt="Patate" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Patate</h4>
+<p class="menu__card-desc">Fior di Latte, papas en lámina a la manteca romero y parmesano.</p>
+                    <span class="menu__card-precio" id="price-pizzas-patate">$18.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/espinaca.jpg" alt="Espinaca" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Espinaca</h4>
+<p class="menu__card-desc">Base de crema, espinaca salteada, fior di latte, y queso parmesano.</p>
+                    <span class="menu__card-precio" id="price-pizzas-espinaca">$18.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/remolacha.jpg" alt="Remolacha" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Remolacha</h4>
+<p class="menu__card-desc">Base de crema de remolacha, fior di latte, nueces y queso brie.</p>
+                    <span class="menu__card-precio" id="price-pizzas-remolacha">$18.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Especiales</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/mortazza.jpg" alt="Mortazza" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Mortazza</h4>
+<p class="menu__card-desc">Crema de pistacho, mortadela con pistacho, fior di latte y alioli.</p>
+                    <span class="menu__card-precio" id="price-pizzas-mortazza">$19.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/zucca.jpg" alt="Zucca" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Zucca</h4>
+<p class="menu__card-desc">Crema de calabaza, fior di latte, gorgonzola, garrapiñada de nuez.</p>
+                    <span class="menu__card-precio" id="price-pizzas-zucca">$17.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/carbonara.jpg" alt="Carbonara" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Carbonara</h4>
+<p class="menu__card-desc">Crema de huevo, fior di latte, parmesano y panceta crocante.</p>
+                    <span class="menu__card-precio" id="price-pizzas-carbonara">$17.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Clásicas</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/margarita.jpg" alt="Margarita" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Margarita</h4>
+<p class="menu__card-desc">Salsa de tomate, fior di latte, albahaca y aceite de oliva.</p>
+                    <span class="menu__card-precio" id="price-pizzas-margarita">$16.900</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/melanzane.jpg" alt="Melanzane" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Melanzane</h4>
+<p class="menu__card-desc">Salsa de tomate, fior di latte, melanzane y crocante de almendra.</p>
+                    <span class="menu__card-precio" id="price-pizzas-melanzane">$17.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/anduja.jpg" alt="Anduja" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Anduja</h4>
+<p class="menu__card-desc">Salsa de tomate, fior di latte, cebolla morada y anduja.</p>
+                    <span class="menu__card-precio" id="price-pizzas-anduja">$17.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/prosciutto.jpg" alt="Prosciutto" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Prosciutto</h4>
+<p class="menu__card-desc">Salsa de tomate, fior di latte, rúcula, jamón crudo y tomates secos.</p>
+                    <span class="menu__card-precio" id="price-pizzas-prosciutto">$19.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/cotto-e-funghi.jpg" alt="Cotto e Funghi" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Cotto e Funghi</h4>
+<p class="menu__card-desc">Salsa de tomate, fior di latte, jamón cocido y champignones.</p>
+                    <span class="menu__card-precio" id="price-pizzas-cotto-e-funghi">$18.900</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/cipolla.jpg" alt="Cipolla" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Cipolla</h4>
+<p class="menu__card-desc">Salsa de tomate, fior di latte, cebolla morada y miel.</p>
+                    <span class="menu__card-precio" id="price-pizzas-cipolla">$16.900</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/diavola.jpg" alt="Diavola" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Diavola</h4>
+<p class="menu__card-desc">Salsa de tomate, fior di latte, pepperoni.</p>
+                    <span class="menu__card-precio" id="price-pizzas-diavola">$19.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+        </div>
+    </details>
+
+    <!-- ============ PINSA ROMANA ============ -->
+    <details class="menu__categoria" id="pinsa-romana-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Pinsa Romana</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+            <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/margarita.jpg" alt="Margarita" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Margarita</h4>
+<p class="menu__card-desc">Salsa de tomate, fior di latte, albahaca y aceite de oliva.</p>
+                    <span class="menu__card-precio" id="price-pinsa-romana-margarita">$20.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/prosciutto.jpg" alt="Prosciutto" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Prosciutto</h4>
+<p class="menu__card-desc">Salsa de tomate, fior di latte, rúcula, jamón crudo y tomates secos.</p>
+                    <span class="menu__card-precio" id="price-pinsa-romana-prosciutto">$22.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/diavola.jpg" alt="Diavola" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Diavola</h4>
+<p class="menu__card-desc">Salsa de tomate, fior di latte y peperoni.</p>
+                    <span class="menu__card-precio" id="price-pinsa-romana-diavola">$21.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/mortazza.jpg" alt="Mortazza" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Mortazza</h4>
+<p class="menu__card-desc">Crema de pistacho, mortadela con pistacho, fior di latte y alioli.</p>
+                    <span class="menu__card-precio" id="price-pinsa-romana-mortazza">$22.500</span>
+                </div>
+            </article>
+            </div>
+        </div>
+    </details>
+
+    <!-- ============ SALSAS ============ -->
+    <details class="menu__categoria" id="salsas-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Salsas</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+            <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/pomodoro-o-fileto.jpg" alt="Pomodoro o Fileto" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Pomodoro o Fileto</h4>
+<p class="menu__card-desc">Salsa de tomate, ajo, albahaca y aceite de oliva.</p>
+                    <span class="menu__card-precio" id="price-salsas-pomodoro-o-fileto">$5.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/salsa-blanca.jpg" alt="Salsa Blanca" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Salsa Blanca</h4>
+<p class="menu__card-desc">Salsa bechamel.</p>
+                    <span class="menu__card-precio" id="price-salsas-salsa-blanca">$4.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/salsa-mixta.jpg" alt="Salsa Mixta" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Salsa Mixta</h4>
+<p class="menu__card-desc">Tuco y crema.</p>
+                    <span class="menu__card-precio" id="price-salsas-salsa-mixta">$5.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/amatriciana.jpg" alt="Amatriciana" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Amatriciana</h4>
+<p class="menu__card-desc">Panceta, tomate, queso pecorino y aceite de oliva.</p>
+                    <span class="menu__card-precio" id="price-salsas-amatriciana">$9.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/albondigas-de-carne.jpg" alt="Albóndigas de Carne" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Albóndigas de Carne</h4>
+<p class="menu__card-desc">Albóndigas de carne con base de salsa pomodoro.</p>
+                    <span class="menu__card-precio" id="price-salsas-albondigas-de-carne">$10.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/funghi.jpg" alt="Funghi" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Funghi</h4>
+<p class="menu__card-desc">Salsa crema de champignones.</p>
+                    <span class="menu__card-precio" id="price-salsas-funghi">$9.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/bolognesa.jpg" alt="Bolognesa" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Bolognesa</h4>
+<p class="menu__card-desc">Salsa base de pomodoro con carne picada de ternera.</p>
+                    <span class="menu__card-precio" id="price-salsas-bolognesa">$9.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/putanesca.jpg" alt="Putanesca" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Putanesca</h4>
+<p class="menu__card-desc">Olivas negras, anchoas, alcaparras, ajo, tomates cherry y salsa base pomodoro.</p>
+                    <span class="menu__card-precio" id="price-salsas-putanesca">$9.800</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/pesto.jpg" alt="Pesto" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Pesto</h4>
+<p class="menu__card-desc">Albahaca, ajo, nueces, queso parmesano y aceite de oliva.</p>
+                    <span class="menu__card-precio" id="price-salsas-pesto">$6.000</span>
+                </div>
+            </article>
+            </div>
+        </div>
+    </details>
+
+    <!-- ============ PASTAS ============ -->
+    <details class="menu__categoria" id="pastas-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Pastas</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Rellenas</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/ravioles-de-la-casa.jpg" alt="Ravioles de la Casa" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Ravioles de la Casa</h4>
+<p class="menu__card-desc">Rellenos de carne, espinaca, parmesano y ricota cremosa.</p>
+                    <span class="menu__card-precio" id="price-pastas-ravioles-de-la-casa">$13.200</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/raviolones-de-ternera.jpg" alt="Raviolones de Ternera" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Raviolones de Ternera</h4>
+<p class="menu__card-desc">Rellenos de ternera braseada, hongos de pino y parmesano.</p>
+                    <span class="menu__card-precio" id="price-pastas-raviolones-de-ternera">$15.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/raviolones-4-quesos.jpg" alt="Raviolones 4 Quesos" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Raviolones 4 Quesos</h4>
+<p class="menu__card-desc">Rellenos de muzzarella, roquefort, parmesano y provolone.</p>
+                    <span class="menu__card-precio" id="price-pastas-raviolones-4-quesos">$13.200</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/sorrentinos-calabaza-y-muzzarella.jpg" alt="Sorrentinos Calabaza y Muzzarella" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Sorrentinos Calabaza y Muzzarella</h4>
+<p class="menu__card-desc">Rellenos de calabaza asada, muzzarella y ricota.</p>
+                    <span class="menu__card-precio" id="price-pastas-sorrentinos-calabaza-y-muzzarella">$13.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/sorrentinos-jamon-y-queso.jpg" alt="Sorrentinos Jamón y Queso" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Sorrentinos Jamón y Queso</h4>
+<p class="menu__card-desc">Rellenos de jamón cocido y queso.</p>
+                    <span class="menu__card-precio" id="price-pastas-sorrentinos-jamon-y-queso">$13.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/sorrentinos-cordero.jpg" alt="Sorrentinos Cordero" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Sorrentinos Cordero</h4>
+<p class="menu__card-desc">Rellenos de cordero, queso provolone y champignon.</p>
+                    <span class="menu__card-precio" id="price-pastas-sorrentinos-cordero">$17.500</span>
+                </div>
+            </article>
+                </div>
+            </details>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Clásicas</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/spaghetti-a-la-carbonara.jpg" alt="Spaghetti a la Carbonara" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Spaghetti a la Carbonara</h4>
+<p class="menu__card-desc">Guanciale, yema de huevo, crema de leche y queso pecorino.</p>
+                    <span class="menu__card-precio" id="price-pastas-spaghetti-a-la-carbonara">$17.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/pappardelle-di-mare.jpg" alt="Pappardelle di Mare" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Pappardelle di Mare</h4>
+<p class="menu__card-desc">Cintas nero di seppia, camarones, berberechos, mejillones, tomates cherry, crema de albahaca y ajo.</p>
+                    <span class="menu__card-precio" id="price-pastas-pappardelle-di-mare">$21.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/tagliatelle-de-la-casa.jpg" alt="Tagliatelle de la Casa" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Tagliatelle de la Casa</h4>
+<p class="menu__card-desc">Salsa pomodoro y albóndigas de ternera.</p>
+                    <span class="menu__card-precio" id="price-pastas-tagliatelle-de-la-casa">$17.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/tagliatelle.jpg" alt="Tagliatelle" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Tagliatelle</h4>
+<p class="menu__card-desc">Con salsa a elección.</p>
+                    <span class="menu__card-precio" id="price-pastas-tagliatelle">$10.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/spaghetti.jpg" alt="Spaghetti" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Spaghetti</h4>
+<p class="menu__card-desc">Con salsa a elección.</p>
+                    <span class="menu__card-precio" id="price-pastas-spaghetti">$10.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Ñoquis</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/noquis-berta.jpg" alt="Ñoquis Berta" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Ñoquis Berta</h4>
+<p class="menu__card-desc">Ñoquis de papa salteados con panceta crocante, rúcula fresca, salsa de soja y almendras.</p>
+                    <span class="menu__card-precio" id="price-pastas-noquis-berta">$16.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/noquis-rellenos.jpg" alt="Ñoquis Rellenos" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Ñoquis Rellenos</h4>
+<p class="menu__card-desc">Muzzarella y roquefort acompañado de salsa pomodoro.</p>
+                    <span class="menu__card-precio" id="price-pastas-noquis-rellenos">$17.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/noquis-de-papa.jpg" alt="Ñoquis de Papa" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Ñoquis de Papa</h4>
+<p class="menu__card-desc">Salsa a elección.</p>
+                    <span class="menu__card-precio" id="price-pastas-noquis-de-papa">$10.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/noquis-en-masa-de-pizza.jpg" alt="Ñoquis en Masa de Pizza" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Ñoquis en Masa de Pizza</h4>
+<p class="menu__card-desc">Ñoquis de papa con salsa bolognesa en masa de pizza.</p>
+                    <span class="menu__card-precio" id="price-pastas-noquis-en-masa-de-pizza">$18.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/malfatti-gratinados.jpg" alt="Malfatti Gratinados" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Malfatti Gratinados</h4>
+<p class="menu__card-desc">Malfattis de espinaca, ricota y queso parmesano gratinados con queso muzarella.</p>
+                    <span class="menu__card-precio" id="price-pastas-malfatti-gratinados">$18.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+        </div>
+    </details>
+
+    <!-- ============ PRINCIPALES ============ -->
+    <details class="menu__categoria" id="principales-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Principales</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+            <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/ojo-de-bife.jpg" alt="Ojo de Bife" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Ojo de Bife</h4>
+<p class="menu__card-desc">Grillado, acompañado de puré de papas especiado.</p>
+                    <span class="menu__card-precio" id="price-principales-ojo-de-bife">$28.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/milanesa-de-ternera.jpg" alt="Milanesa de Ternera" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Milanesa de Ternera</h4>
+<p class="menu__card-desc">Dos milanesas de peceto acompañadas de spaghettis de la casa o ñoquis a la crema.</p>
+                    <span class="menu__card-precio" id="price-principales-milanesa-de-ternera">$19.800</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/suprema-berta.jpg" alt="Suprema Berta" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Suprema Berta</h4>
+<p class="menu__card-desc">Filet de pollo rebozado, acompañado de ñoquis al pesto, crema de pistachos y tomate cherry.</p>
+                    <span class="menu__card-precio" id="price-principales-suprema-berta">$20.300</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/suprema-mediterranea.jpg" alt="Suprema Mediterránea" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Suprema Mediterránea</h4>
+<p class="menu__card-desc">Filet de pollo rebozado sobre laminas de jamón crudo, acompañado de rúcula, tomate cherry, queso parmesano y reducción de aceto balsámico.</p>
+                    <span class="menu__card-precio" id="price-principales-suprema-mediterranea">$19.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/milanesa-parmesana.jpg" alt="Milanesa Parmesana" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Milanesa Parmesana</h4>
+<p class="menu__card-desc">Milanesa de ternera, salsa pomodoro, muzzarella fundida y parmesano.</p>
+                    <span class="menu__card-precio" id="price-principales-milanesa-parmesana">$20.300</span>
+                </div>
+            </article>
+            </div>
+        </div>
+    </details>
+
+    <!-- ============ SANDWICHS ============ -->
+    <details class="menu__categoria" id="sandwichs-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Sandwichs</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+            <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/panuozzo-de-jamon.jpg" alt="Panuozzo de Jamón" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Panuozzo de Jamón</h4>
+<p class="menu__card-desc">Jamón crudo, sardo marinado, rúcula, cherrys confitados y aceite de oliva o alioli.</p>
+                    <span class="menu__card-precio" id="price-sandwichs-panuozzo-de-jamon">$14.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/panuozzo-de-albondigas.jpg" alt="Panuozzo de Albóndigas" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Panuozzo de Albóndigas</h4>
+<p class="menu__card-desc">Albóndigas con salsa pomodoro, fior di latte y parmesano.</p>
+                    <span class="menu__card-precio" id="price-sandwichs-panuozzo-de-albondigas">$14.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/schiacciata-de-rucula.jpg" alt="Schiacciata de Rúcula" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Schiacciata de Rúcula</h4>
+<p class="menu__card-desc">Rúcula, gorgonzola, peras en láminas, sardo y reducción de aceto.</p>
+                    <span class="menu__card-precio" id="price-sandwichs-schiacciata-de-rucula">$14.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/schiacciata-de-mortadela.jpg" alt="Schiacciata de Mortadela" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Schiacciata de Mortadela</h4>
+<p class="menu__card-desc">Mortadela con pistacho, pesto de albahaca, straciatella.</p>
+                    <span class="menu__card-precio" id="price-sandwichs-schiacciata-de-mortadela">$14.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/focaccia-de-rucula.jpg" alt="Focaccia de Rúcula" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Focaccia de Rúcula</h4>
+<p class="menu__card-desc">Rúcula, tomates secos, pesto de pistachos y stracciatella.</p>
+                    <span class="menu__card-precio" id="price-sandwichs-focaccia-de-rucula">$15.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/focaccia-de-jamon-crudo.jpg" alt="Focaccia de Jamón Crudo" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Focaccia de Jamón Crudo</h4>
+<p class="menu__card-desc">Jamón crudo, tomates cherry, rúcula, parmesano y pesto de albahaca.</p>
+                    <span class="menu__card-precio" id="price-sandwichs-focaccia-de-jamon-crudo">$15.500</span>
+                </div>
+            </article>
+            </div>
+        </div>
+    </details>
+
+    <!-- ============ ENSALADAS ============ -->
+    <details class="menu__categoria" id="ensaladas-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Ensaladas</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+            <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/caesar.jpg" alt="Caesar" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Caesar</h4>
+<p class="menu__card-desc">Mix hojas verdes, lascas de queso parmesano, pan crocante y pollo grillado acompañada de aderezo caesar.</p>
+                    <span class="menu__card-precio" id="price-ensaladas-caesar">$16.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/berta.jpg" alt="Berta" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Berta</h4>
+<p class="menu__card-desc">Penne rigatti, rúcula, aceitunas negras, parmesano, tomates cherry.</p>
+                    <span class="menu__card-precio" id="price-ensaladas-berta">$14.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/langostinos.jpg" alt="Langostinos" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Langostinos</h4>
+<p class="menu__card-desc">Mix hojas verdes, langostinos, tomates cherry, tiras de queso.</p>
+                    <span class="menu__card-precio" id="price-ensaladas-langostinos">$17.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/cobb.jpg" alt="Cobb" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Cobb</h4>
+<p class="menu__card-desc">Lechuga, rúcula, tomate fresco, palta, huevo, pollo grillado, roquefort y panceta crocante.</p>
+                    <span class="menu__card-precio" id="price-ensaladas-cobb">$19.500</span>
+                </div>
+            </article>
+            </div>
+        </div>
+    </details>
+
+    <!-- ============ MENÚ INFANTIL ============ -->
+    <details class="menu__categoria" id="menu-infantil-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Menú Infantil</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+            <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/spaghettis-o-noquis.jpg" alt="Spaghettis o Ñoquis" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Spaghettis o Ñoquis</h4>
+<p class="menu__card-desc">Con salsa mixta, crema o fileto.</p>
+                    <span class="menu__card-precio" id="price-menu-infantil-spaghettis-o-noquis">$12.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/bastoncitos-de-mozzarella.jpg" alt="Bastoncitos de Mozzarella" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Bastoncitos de Mozzarella</h4>
+
+                    <span class="menu__card-precio" id="price-menu-infantil-bastoncitos-de-mozzarella">$15.000</span>
+                </div>
+            </article>
+            </div>
+        </div>
+    </details>
+
+    <!-- ============ BEBIDAS ============ -->
+    <details class="menu__categoria" id="bebidas-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Bebidas</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Sin alcohol</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/pepsi-pepsi-black-350ml.jpg" alt="Pepsi / Pepsi Black 350ml" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Pepsi / Pepsi Black 350ml</h4>
+
+                    <span class="menu__card-precio" id="price-bebidas-pepsi-pepsi-black-350ml">$4.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/mirinda-350ml.jpg" alt="Mirinda 350ml" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Mirinda 350ml</h4>
+
+                    <span class="menu__card-precio" id="price-bebidas-mirinda-350ml">$4.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/seven-up-seven-free-350ml.jpg" alt="Seven Up / Seven Free 350ml" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Seven Up / Seven Free 350ml</h4>
+
+                    <span class="menu__card-precio" id="price-bebidas-seven-up-seven-free-350ml">$4.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/paso-de-los-toros.jpg" alt="Paso de los Toros" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Paso de los Toros</h4>
+<p class="menu__card-desc">Pomelo / tónica.</p>
+                    <span class="menu__card-precio" id="price-bebidas-paso-de-los-toros">$4.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/agua-saborizada.jpg" alt="Agua Saborizada" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Agua Saborizada</h4>
+<p class="menu__card-desc">Manzana / Pomelo.</p>
+                    <span class="menu__card-precio" id="price-bebidas-agua-saborizada">$4.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/agua-con-sin-gas.jpg" alt="Agua con/sin gas" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Agua con/sin gas</h4>
+
+                    <span class="menu__card-precio" id="price-bebidas-agua-con-sin-gas">$4.500</span>
+                </div>
+            </article>
+                </div>
+            </details>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Jarras sin/con alcohol</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/limonada-de-la-casa.jpg" alt="Limonada de la Casa" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Limonada de la Casa</h4>
+<p class="menu__card-desc">Jugo de lima, almíbar simple, menta y jengibre.</p>
+                    <span class="menu__card-precio" id="price-bebidas-limonada-de-la-casa">$15.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/limonada-especial.jpg" alt="Limonada Especial" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Limonada Especial</h4>
+<p class="menu__card-desc">Jugo de lima, almíbar simple, menta, pepino y frutos rojos.</p>
+                    <span class="menu__card-precio" id="price-bebidas-limonada-especial">$16.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/cynar.jpg" alt="Cynar" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Cynar</h4>
+<p class="menu__card-desc">Cynar, jugo de limón, menta, gaseosa de pomelo y rodajas de pomelo.</p>
+                    <span class="menu__card-precio" id="price-bebidas-cynar">$22.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/sangria-de-la-casa.jpg" alt="Sangría de la Casa" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Sangría de la Casa</h4>
+<p class="menu__card-desc">Vino tinto, jugo de limón, almíbar, frutos rojos, frutas de estación.</p>
+                    <span class="menu__card-precio" id="price-bebidas-sangria-de-la-casa">$22.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+        </div>
+    </details>
+
+    <!-- ============ CERVEZAS ============ -->
+    <details class="menu__categoria" id="cervezas-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Cervezas</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+            <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/corona-330cc-sin-alcohol.jpg" alt="Corona 330cc / sin alcohol" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Corona 330cc / sin alcohol</h4>
+
+                    <span class="menu__card-precio" id="price-cervezas-corona-330cc-sin-alcohol">$6.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/stella-artois-330cc-sin-alcohol.jpg" alt="Stella Artois 330cc / sin alcohol" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Stella Artois 330cc / sin alcohol</h4>
+
+                    <span class="menu__card-precio" id="price-cervezas-stella-artois-330cc-sin-alcohol">$5.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/stella-artois-noir-473cc.jpg" alt="Stella Artois Noir 473cc" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Stella Artois Noir 473cc</h4>
+
+                    <span class="menu__card-precio" id="price-cervezas-stella-artois-noir-473cc">$5.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/patagonia-473cc.jpg" alt="Patagonia 473cc" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Patagonia 473cc</h4>
+
+                    <span class="menu__card-precio" id="price-cervezas-patagonia-473cc">$5.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/andes-origen-litro.jpg" alt="Andes Origen Litro" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Andes Origen Litro</h4>
+
+                    <span class="menu__card-precio" id="price-cervezas-andes-origen-litro">$11.000</span>
+                </div>
+            </article>
+            </div>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Tiradas</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/stella-500cc.jpg" alt="Stella 500cc" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Stella 500cc</h4>
+
+                    <span class="menu__card-precio" id="price-cervezas-stella-500cc">$6.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/patagonia-amber-lager-500cc.jpg" alt="Patagonia Amber Lager 500cc" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Patagonia Amber Lager 500cc</h4>
+
+                    <span class="menu__card-precio" id="price-cervezas-patagonia-amber-lager-500cc">$6.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/patagonia-ipa-24-7-500cc.jpg" alt="Patagonia IPA 24/7 500cc" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Patagonia IPA 24/7 500cc</h4>
+
+                    <span class="menu__card-precio" id="price-cervezas-patagonia-ipa-24-7-500cc">$6.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/patagonia-lager-del-sur.jpg" alt="Patagonia Lager del Sur" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Patagonia Lager del Sur</h4>
+
+                    <span class="menu__card-precio" id="price-cervezas-patagonia-lager-del-sur">$6.500</span>
+                </div>
+            </article>
+                </div>
+            </details>
+        </div>
+    </details>
+
+    <!-- ============ TRAGOS ============ -->
+    <details class="menu__categoria" id="tragos-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Tragos</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Tónicos</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/la-salvaje.jpg" alt="La Salvaje" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">La Salvaje</h4>
+
+                    <span class="menu__card-precio" id="price-tragos-la-salvaje">$6.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/beefeater.jpg" alt="Beefeater" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Beefeater</h4>
+
+                    <span class="menu__card-precio" id="price-tragos-beefeater">$8.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/beefeater-pink.jpg" alt="Beefeater Pink" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Beefeater Pink</h4>
+
+                    <span class="menu__card-precio" id="price-tragos-beefeater-pink">$9.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Aperitivos</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/fernet-branca.jpg" alt="Fernet Branca" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Fernet Branca</h4>
+
+                    <span class="menu__card-precio" id="price-tragos-fernet-branca">$6.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/cynar-julep.jpg" alt="Cynar Julep" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Cynar Julep</h4>
+
+                    <span class="menu__card-precio" id="price-tragos-cynar-julep">$6.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/carpano-orange.jpg" alt="Carpano Orange" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Carpano Orange</h4>
+
+                    <span class="menu__card-precio" id="price-tragos-carpano-orange">$6.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/aperol-spritz.jpg" alt="Aperol Spritz" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Aperol Spritz</h4>
+
+                    <span class="menu__card-precio" id="price-tragos-aperol-spritz">$7.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/rosatto.jpg" alt="Rosatto" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Rosatto</h4>
+
+                    <span class="menu__card-precio" id="price-tragos-rosatto">$6.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/gancia.jpg" alt="Gancia" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Gancia</h4>
+
+                    <span class="menu__card-precio" id="price-tragos-gancia">$6.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+        </div>
+    </details>
+
+    <!-- ============ VINOS ============ -->
+    <details class="menu__categoria" id="vinos-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Vinos</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Viña Las Perdices</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/las-perdices.jpg" alt="Las Perdices" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Las Perdices</h4>
+<p class="menu__card-desc">Malbec, Sauvignon Blanc.</p>
+                    <span class="menu__card-precio" id="price-vinos-las-perdices">$16.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/las-perdices-reserva.jpg" alt="Las Perdices Reserva" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Las Perdices Reserva</h4>
+<p class="menu__card-desc">Malbec, Pinot Noire, Chardonnay.</p>
+                    <span class="menu__card-precio" id="price-vinos-las-perdices-reserva">$18.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/copa-de-vino-las-perdices-reserva.jpg" alt="Copa de Vino Las Perdices Reserva" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Copa de Vino Las Perdices Reserva</h4>
+
+                    <span class="menu__card-precio" id="price-vinos-copa-de-vino-las-perdices-reserva">$5.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Bodega Salentein</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/salentein-brut-nature.jpg" alt="Salentein Brut Nature" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Salentein Brut Nature</h4>
+
+                    <span class="menu__card-precio" id="price-vinos-salentein-brut-nature">$21.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/salentein-brut-rose.jpg" alt="Salentein Brut Rosé" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Salentein Brut Rosé</h4>
+
+                    <span class="menu__card-precio" id="price-vinos-salentein-brut-rose">$21.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/alyda-brut-nature.jpg" alt="Alyda Brut Nature" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Alyda Brut Nature</h4>
+
+                    <span class="menu__card-precio" id="price-vinos-alyda-brut-nature">$35.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Bodega Catena Zapata</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/alamos.jpg" alt="Álamos" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Álamos</h4>
+<p class="menu__card-desc">Malbec, Cabernet Sauvignon, Chardonnay.</p>
+                    <span class="menu__card-precio" id="price-vinos-alamos">$16.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/dv-catena.jpg" alt="DV Catena" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">DV Catena</h4>
+<p class="menu__card-desc">Cabernet - Malbec.</p>
+                    <span class="menu__card-precio" id="price-vinos-dv-catena">$25.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/nicasia.jpg" alt="Nicasia" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Nicasia</h4>
+<p class="menu__card-desc">Blanc de Blancs, Cabernet Franc.</p>
+                    <span class="menu__card-precio" id="price-vinos-nicasia">$18.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/saint-felicien.jpg" alt="Saint Felicien" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Saint Felicien</h4>
+<p class="menu__card-desc">Pinot Noir, Malbec, Sauvignon Blanc.</p>
+                    <span class="menu__card-precio" id="price-vinos-saint-felicien">$22.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Escorihuela Gascón</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/escorihuela-gascon.jpg" alt="Escorihuela Gascón" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Escorihuela Gascón</h4>
+<p class="menu__card-desc">Malbec, Sangiovese, Syrah.</p>
+                    <span class="menu__card-precio" id="price-vinos-escorihuela-gascon">$21.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/familia-gascon-roble.jpg" alt="Familia Gascón Roble" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Familia Gascón Roble</h4>
+<p class="menu__card-desc">Malbec, Cabernet Sauvignon, Sauvignon Blanc.</p>
+                    <span class="menu__card-precio" id="price-vinos-familia-gascon-roble">$15.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/gran-reserva.jpg" alt="Gran Reserva" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Gran Reserva</h4>
+<p class="menu__card-desc">Malbec, Cabernet Sauvignon, Chardonnay.</p>
+                    <span class="menu__card-precio" id="price-vinos-gran-reserva">$32.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Boutique</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/la-posta.jpg" alt="La Posta" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">La Posta</h4>
+<p class="menu__card-desc">Malbec, Pinot Noire.</p>
+                    <span class="menu__card-precio" id="price-vinos-la-posta">$27.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/cuchillo-de-palo.jpg" alt="Cuchillo de Palo" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Cuchillo de Palo</h4>
+<p class="menu__card-desc">Rosé de Pinot Noire.</p>
+                    <span class="menu__card-precio" id="price-vinos-cuchillo-de-palo">$29.500</span>
+                </div>
+            </article>
+                </div>
+            </details>
+
+            <details class="menu__subcategoria">
+                <summary class="menu__subcategoria-header">
+                    <span>Jorge Rubio</span>
+                    <i class="ti ti-chevron-down menu__arrow"></i>
+                </summary>
+                <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/finca-gabriel-cosecha-tardia.jpg" alt="Finca Gabriel Cosecha Tardía" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Finca Gabriel Cosecha Tardía</h4>
+
+                    <span class="menu__card-precio" id="price-vinos-finca-gabriel-cosecha-tardia">$15.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/jorge-rubio-varietales.jpg" alt="Jorge Rubio Varietales" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Jorge Rubio Varietales</h4>
+<p class="menu__card-desc">Malbec, Bonarda, Cabernet Franc, Tempranillo.</p>
+                    <span class="menu__card-precio" id="price-vinos-jorge-rubio-varietales">$21.000</span>
+                </div>
+            </article>
+                </div>
+            </details>
+        </div>
+    </details>
+
+    <!-- ============ POSTRES ============ -->
+    <details class="menu__categoria" id="postres-section">
+        <summary class="menu__categoria-header">
+            <span class="menu__categoria-nombre">Postres</span>
+            <i class="ti ti-chevron-down menu__arrow"></i>
+        </summary>
+        <div class="menu__categoria-body">
+            <div class="menu__carousel">
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/flan-casero.jpg" alt="Flan Casero" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Flan Casero</h4>
+
+                    <span class="menu__card-precio" id="price-postres-flan-casero">$6.600</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/tiramisu.jpg" alt="Tiramisú" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Tiramisú</h4>
+<p class="menu__card-desc">Mousse de mascarpone y vainillas embebidas en café expresso.</p>
+                    <span class="menu__card-precio" id="price-postres-tiramisu">$11.500</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/panacota-de-nutella-y-pistachos.jpg" alt="Panacota de Nutella y Pistachos" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Panacota de Nutella y Pistachos</h4>
+<p class="menu__card-desc">Crema de leche y leche infusionada con Nutella acompañada de pistachos y frutos rojos.</p>
+                    <span class="menu__card-precio" id="price-postres-panacota-de-nutella-y-pistachos">$9.900</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/strufolonni.jpg" alt="Strufolonni" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Strufolonni</h4>
+<p class="menu__card-desc">Panqueque a base de masa de pizza relleno de nutella.</p>
+                    <span class="menu__card-precio" id="price-postres-strufolonni">$10.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/volcan-de-chocolate.jpg" alt="Volcán de Chocolate" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Volcán de Chocolate</h4>
+<p class="menu__card-desc">Clásico con helado de americana.</p>
+                    <span class="menu__card-precio" id="price-postres-volcan-de-chocolate">$11.000</span>
+                </div>
+            </article>
+            <article class="menu__card">
+                <img class="menu__card-img" src="/img/menu/bocha-de-helado.jpg" alt="Bocha de Helado" loading="lazy" onerror="this.classList.add('menu__card-img--fallback')">
+                <div class="menu__card-info">
+                    <h4 class="menu__card-nombre">Bocha de Helado</h4>
+<p class="menu__card-desc">Chocolate, americana, pistacho (consultar sabores).</p>
+                    <span class="menu__card-precio" id="price-postres-bocha-de-helado">$5.000</span>
+                </div>
+            </article>
+            </div>
+        </div>
+    </details>
+
+</section>
+</body>
+</html>

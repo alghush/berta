@@ -1,0 +1,425 @@
+/* ============================================================
+   MENU.CSS — Sección "Carta" de home.html
+   Categorías (details) > Subcategorías (details anidado) > Carrusel de cards
+   Requiere que style.css esté cargado antes (variables :root)
+   Mobile first: base = mobile, @media min-width = tablet/desktop
+
+   DIRECCIÓN VISUAL
+   Bodegón contemporáneo, foto grande como protagonista:
+   cada categoría se abre con la foto de su plato más representativo
+   (fondo, con degradado), verde oliva de la casa como color de marca,
+   terracota reservado al precio. Fraunces para lo cálido/artesanal,
+   Montserrat para lo utilitario.
+   Firma: el precio como etiqueta de almacén (ticket punteado, con
+   perforación e inclinación leve).
+   ============================================================ */
+
+.menu {
+    /* Tokens locales — derivados de las variables globales de style.css,
+       no se inventa paleta nueva, se ordena la que ya existe. */
+    --menu-cream: var(--color-fondo-productos);
+    --menu-paper: #fffaf4;
+    --menu-ink: var(--text-color-dark);
+    --menu-olive: var(--color-hover);
+    --menu-olive-deep: #172c10;
+    --menu-terracota: var(--color-productos-title);
+    --menu-taupe: var(--color-secundary);
+
+    padding: 3.5rem 1rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    background:
+        radial-gradient(circle at 15% 0%, #ffffff55, transparent 55%);
+    border-radius: 18px;
+    position: relative;
+}
+
+/*--- ENCABEZADO DE LA SECCIÓN ---*/
+
+.menu__title {
+    position: relative;
+    font-family: 'Fraunces', 'Montserrat', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-optical-sizing: auto;
+    font-size: 2.1rem;
+    text-align: center;
+    color: var(--menu-ink);
+    letter-spacing: 0.2px;
+    text-transform: none;
+    margin-bottom: 0.6rem;
+}
+
+.menu__title::before {
+    content: "Desde el obrador";
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--menu-olive);
+    margin-bottom: 0.7rem;
+}
+
+.menu__title::after {
+    content: "";
+    display: block;
+    width: 74px;
+    height: 10px;
+    margin: 0.7rem auto 2.4rem;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74 10'%3E%3Cpath d='M1 6c6-8 12 8 18 0s12 8 18 0s12 8 18 0s12 8 18 0' fill='none' stroke='%23b45526' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+/*--- CATEGORÍA (nivel 1) — foto grande como protagonista ---*/
+
+.menu__categoria {
+    margin-bottom: 1.1rem;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(43, 36, 32, 0.12);
+}
+
+.menu__categoria-header {
+    --menu-thumb: none;
+    --menu-thumb-pos: 50% 42%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 20px;
+    min-height: 92px;
+    color: var(--color-blanco);
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    background-image:
+        linear-gradient(100deg, rgba(15, 12, 8, 0.88) 0%, rgba(15, 12, 8, 0.72) 34%, rgba(15, 12, 8, 0.18) 58%, rgba(15, 12, 8, 0) 76%),
+        linear-gradient(0deg, rgba(15, 12, 8, 0.32) 0%, rgba(15, 12, 8, 0) 42%),
+        var(--menu-thumb);
+    background-size: cover;
+    background-position: var(--menu-thumb-pos);
+    transition: filter 0.25s ease;
+}
+
+/* Foto destacada por categoría — un solo lugar para cambiar
+   la imagen o el encuadre de cada encabezado */
+#entradas-section .menu__categoria-header { --menu-thumb: url(../img/entrada/entrada.png); }
+#pizzas-section .menu__categoria-header { --menu-thumb: url(/img/pizzas/pizzas_bannner.png); --menu-thumb-pos: 65% 40%; }
+#pinsa-romana-section .menu__categoria-header { --menu-thumb: url(/img/pizzas/pizzas_bannner.png); }
+#salsas-section .menu__categoria-header { --menu-thumb: url(/img/menu/pomodoro-o-fileto.jpg); }
+#pastas-section .menu__categoria-header { --menu-thumb: url(../img/pastas/pastas.png); }
+#principales-section .menu__categoria-header { --menu-thumb: url(../img/principal/principal.png); }
+#sandwichs-section .menu__categoria-header { --menu-thumb: url(../img/sanwich/sanwich.png); }
+#ensaladas-section .menu__categoria-header { --menu-thumb: url(../img/ensaladas/ensaldas.png); }
+#menu-infantil-section .menu__categoria-header { --menu-thumb: url(/img/menu/spaghettis-o-noquis.jpg); }
+#bebidas-section .menu__categoria-header { --menu-thumb: url(/img/menu/limonada-de-la-casa.jpg); }
+#cervezas-section .menu__categoria-header { --menu-thumb: url(/img/menu/patagonia-473cc.jpg); }
+#tragos-section .menu__categoria-header { --menu-thumb: url(../img/tragos/tragos.png); }
+#vinos-section .menu__categoria-header { --menu-thumb: url(/img/menu/las-perdices-reserva.jpg); }
+#postres-section .menu__categoria-header { --menu-thumb: url(/img/menu/tiramisu.jpg); }
+
+.menu__categoria-header::-webkit-details-marker {
+    display: none;
+}
+
+.menu__categoria-header:hover {
+    filter: brightness(1.08);
+}
+
+/* si la imagen no carga (placeholder no subido todavía), cae en el verde de marca */
+.menu__categoria-header {
+    background-color: var(--menu-olive-deep);
+}
+
+.menu__categoria-nombre {
+    flex: 1;
+    font-family: 'Fraunces', 'Montserrat', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.35rem;
+    letter-spacing: 0.2px;
+    text-transform: none;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    position: relative;
+    z-index: 1;
+}
+
+.menu__arrow {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.5));
+}
+
+.menu__categoria[open] > .menu__categoria-header .menu__arrow {
+    transform: rotate(180deg);
+}
+
+.menu__categoria-body {
+    padding: 1.1rem 0.5rem 0.6rem;
+    background: var(--menu-paper);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes menu-reveal {
+        from {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    .menu__categoria[open] > .menu__categoria-body {
+        animation: menu-reveal 0.35s ease both;
+    }
+}
+
+/*--- SUBCATEGORÍA (nivel 2, anidada dentro de categoria-body) ---*/
+
+.menu__subcategoria {
+    margin: 0 0.5rem 1.2rem;
+}
+
+.menu__subcategoria:last-child {
+    margin-bottom: 0.3rem;
+}
+
+.menu__subcategoria-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 4px 2px 10px;
+    color: var(--menu-olive);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 0.98rem;
+    letter-spacing: 0.2px;
+    text-transform: none;
+    cursor: pointer;
+    list-style: none;
+    border-bottom: 1px dashed #22391740;
+}
+
+.menu__subcategoria-header::-webkit-details-marker {
+    display: none;
+}
+
+.menu__subcategoria-header span {
+    white-space: nowrap;
+}
+
+/* leader de puntos, como en los menús impresos clásicos */
+.menu__subcategoria-header::before {
+    content: "";
+    flex: 1;
+    order: 1;
+    border-bottom: 2px dotted #8a7d6e70;
+    margin: 0 4px 3px;
+}
+
+.menu__subcategoria-header .menu__arrow {
+    order: 2;
+    color: var(--menu-taupe);
+    font-size: 0.9rem;
+    filter: none;
+}
+
+.menu__subcategoria[open] > .menu__subcategoria-header .menu__arrow {
+    transform: rotate(180deg);
+}
+
+/*--- CARRUSEL HORIZONTAL DE CARDS ---*/
+
+.menu__carousel {
+    display: flex;
+    gap: 0.9rem;
+    overflow-x: auto;
+    padding: 0.6rem 0.5rem 1.1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--menu-olive) transparent;
+}
+
+.menu__carousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.menu__carousel::-webkit-scrollbar-thumb {
+    background: var(--menu-olive);
+    border-radius: 10px;
+}
+
+/*--- CARD DE PRODUCTO ---*/
+
+.menu__card {
+    flex: 0 0 auto;
+    width: 205px;
+    scroll-snap-align: start;
+    background: var(--menu-paper);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(43, 36, 32, 0.1);
+    border: 1px solid #2b242010;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(43, 36, 32, 0.16);
+}
+
+.menu__card-img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+    background: var(--color-fondo-productos);
+    filter: saturate(1.02);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.menu__card:hover .menu__card-img {
+    transform: scale(1.06);
+}
+
+/* Fallback visual mientras no haya foto real cargada */
+.menu__card-img--fallback {
+    background: var(--color-fondo-productos)
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a7d6e' stroke-width='1.5'%3E%3Cpath d='M4 4h16v16H4z' opacity='0'/%3E%3Ccircle cx='9' cy='9' r='2'/%3E%3Cpath d='M21 15l-5-5L5 21'/%3E%3C/svg%3E") center/32px no-repeat;
+}
+
+.menu__card-info {
+    padding: 13px 14px 15px;
+}
+
+.menu__card-nombre {
+    font-family: 'Fraunces', 'Montserrat', serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--menu-ink);
+    margin-bottom: 4px;
+    line-height: 1.25;
+}
+
+.menu__card-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-size: 0.71rem;
+    color: var(--menu-taupe);
+    line-height: 1.45;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- Firma visual: el precio como etiqueta de almacén --- */
+.menu__card-precio {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--menu-terracota);
+    background: var(--menu-cream);
+    padding: 4px 12px 4px 16px;
+    border: 1.5px dashed #b4552680;
+    border-radius: 3px;
+    transform: rotate(-1.6deg);
+}
+
+/* perforación del ticket, "recortada" del color de la card */
+.menu__card-precio::before {
+    content: "";
+    position: absolute;
+    left: -1.5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--menu-paper);
+    border: 1.5px dashed #b4552680;
+    border-right: none;
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   RESPONSIVE — mobile first
+   768px  = tablet
+   1024px = desktop
+   ============================================================ */
+
+@media (min-width: 768px) {
+    .menu {
+        padding: 4.5rem 2.5rem 5rem;
+    }
+
+    .menu__title {
+        font-size: 2.6rem;
+    }
+
+    .menu__categoria-header {
+        padding: 30px 32px;
+        min-height: 118px;
+    }
+
+    .menu__categoria-nombre {
+        font-size: 1.6rem;
+    }
+
+    .menu__card {
+        width: 232px;
+    }
+
+    .menu__card-img {
+        height: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .menu {
+        max-width: 1100px;
+        padding: 5.5rem 2rem 6rem;
+    }
+
+    .menu__categoria-header {
+        min-height: 140px;
+    }
+
+    .menu__categoria-nombre {
+        font-size: 1.8rem;
+    }
+
+    .menu__card {
+        width: 252px;
+    }
+
+    .menu__card-img {
+        height: 165px;
+    }
+
+    .menu__card-nombre {
+        font-size: 1rem;
+    }
+
+    .menu__card-desc {
+        font-size: 0.78rem;
+    }
+
+    .menu__card-precio {
+        font-size: 0.85rem;
+    }
+}
