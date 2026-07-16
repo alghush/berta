@@ -3,16 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&display=swap"
+            rel="stylesheet">
+    </noscript>
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/home.css">
     <title>BERTA</title>
 </head>
 <body>
-    <!-- El video que queda de fondo para siempre -->
 
-    <video id="video-cena" autoplay muted loop playsinline class="video-background activo">
-        <source src="/video/bertavideo.mp4 " type="video/mp4">
-    </video>
+<!-- El video que queda de fondo para siempre -->
+<video id="video-cena" autoplay muted loop playsinline class="video-background activo">
+    <source src="/video/bertavideo.mp4 " type="video/mp4">
+</video>
+
+<header class="carta-header">
+    <button type="button" class="carta-header__icon-btn" id="btn-atras" aria-label="Volver">
+        <i class="ti ti-arrow-left"></i>
+    </button>
+    <a href="#bio-section" class="carta-header__logo" aria-label="Ir a la presentación de Berta">
+        <img src="/img/logo.png" alt="Berta Obrador de Masas">
+    </a>
+    <button type="button" class="carta-header__reservar" onclick="abrirModalReserva()">
+        Reservar
+    </button>
+</header>
+
+<!-- ============ PRESENTACIÓN / BIO ============ -->
+<section class="bio" id="bio-section">
+    <div class="bio__inner">
+        <p class="bio__eyebrow">Nuestra historia</p>
+        <h1 class="bio__title">Berta Obrador de Masas</h1>
+        <p class="bio__desc">
+            <!-- TEXTO DE EJEMPLO — reemplazar por la historia real del local -->
+            Nacimos de las ganas de hacer las cosas como se hacían antes: masa amasada a mano,
+            todos los días, sin apuro. Pizza, pasta y pan recién salidos del horno, en un lugar
+            pensado para compartir en mesa larga.
+        </p>
+    </div>
+</section>
+
+<!-- ============ NAV DE CATEGORÍAS (sticky) ============ -->
 
 <section class="menu" id="carta">
     <h2 class="menu__title">Nuestra Carta</h2>
@@ -1281,5 +1322,74 @@
     </details>
 
 </section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="carta-footer">
+    <img class="carta-footer__logo" src="/img/logo.png" alt="Berta Obrador de Masas">
+
+    <!-- HORARIO DE EJEMPLO — reemplazar por el horario real -->
+    <p class="carta-footer__horario">Mar a Dom de 20 a 00 hs</p>
+
+    <div class="carta-footer__links">
+        <a class="carta-footer__link" href="https://www.instagram.com/berta.obradordemasas/" target="_blank">
+            <i class="ti ti-brand-instagram"></i> Redes
+        </a>
+        <a class="carta-footer__link" href="https://pedidos.masdelivery.com/berta-obrador-de-masas" target="_blank">
+            <i class="ti ti-moped"></i> Hacé tu pedido
+        </a>
+        <a class="carta-footer__link" href="https://maps.app.goo.gl/ypdthF8dNLui6ij89" target="_blank">
+            <i class="ti ti-map-pin"></i> Ubicación
+        </a>
+        <button type="button" class="carta-footer__link carta-footer__link--btn" onclick="abrirModalReserva()">
+            <i class="ti ti-calendar"></i> Reservar
+        </button>
+    </div>
+</footer>
+
+<!-- ============ MODAL RESERVA (mismo modal y lógica de index.html) ============ -->
+<div class="modal-overlay" id="modal-reserva-overlay" onclick="cerrarModalReserva()">
+    <div class="modal" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="cerrarModalReserva()">✕</button>
+        <h2 class="modal-titulo">RESERVAR</h2>
+        <div class="reserva__logo">
+            <img src="/img/logo.png" alt="Logo Berta Obrador de Masas">
+        </div>
+        <div class="modal-form">
+            <div class="form-group"><label>Tu nombre</label><input type="text" id="reserva-nombre"
+                    placeholder="Nombre y apellido"></div>
+            <div class="form-group"><label>Fecha</label><input type="date" id="reserva-fecha"></div>
+            <div class="form-group">
+                <label>Turno</label>
+                <select id="reserva-turno">
+                    <option value="" disabled selected>Elegí un turno</option>
+                    <option value="Desayuno">Almuerzo</option>
+                    <option value="Cena">Cena</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Adultos</label><input type="number" id="reserva-adultos"
+                        placeholder="0" min="0"></div>
+                <div class="form-group"><label>Niños (sillas altas)</label><input type="number" id="reserva-ninos"
+                        placeholder="0" min="0"></div>
+            </div>
+            <div class="form-group">
+                <label>Sector</label>
+                <div class="sector-btns">
+                    <button class="sector-btn activo" onclick="elegirSectorReserva('Adentro', this)">
+                        <i class="ti ti-building"></i> Adentro
+                    </button>
+                    <button class="sector-btn" onclick="elegirSectorReserva('Afuera', this)">
+                        <i class="ti ti-tree"></i> Afuera
+                    </button>
+                </div>
+            </div>
+            <button class="modal-btn" onclick="enviarReserva()"><i class="ti ti-brand-whatsapp"></i> CONFIRMAR
+                RESERVA</button>
+        </div>
+    </div>
+</div>
+
+<script src="/js/script.js"></script>
+<script src="/js/carta.js"></script>
 </body>
 </html>

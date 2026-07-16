@@ -14,6 +14,120 @@
    perforación e inclinación leve).
    ============================================================ */
 
+
+.carta-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--color-hover);
+    box-shadow: 0 2px 10px rgba(43, 36, 32, 0.08);
+}
+
+.carta-header__icon-btn {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: var(--text-color-dark);
+    font-size: 1.1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+
+.carta-header__icon-btn:hover {
+    background: var(--color-hover);
+}
+
+.carta-header__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.carta-header__logo img {
+    height: 34px;
+    width: auto;
+    object-fit: contain;
+}
+
+.carta-header__reservar {
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50px;
+    padding: 9px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--color-blanco);
+    background: var(--color-hover);
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.carta-header__reservar:hover {
+    background: var(--color-negro);
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   BIO — presentación de Berta, tipo landing, antes de la carta
+   ============================================================ */
+
+.bio {
+    padding: 3.5rem 1rem 4rem;
+    max-width: 900px;
+    text-align: center;
+    background:
+        radial-gradient(circle at 15% 0%, #ffffff55, transparent 55%);
+    position: relative;
+}
+
+.bio__inner {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.bio__eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-hover);
+    margin-bottom: 0.6rem;
+}
+
+.bio__title {
+    font-family: 'Fraunces', 'Montserrat', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.9rem;
+    color: var(--text-color-dark);
+    margin-bottom: 0.9rem;
+}
+
+.bio__desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--color-secundary);
+}
+
+
+
 .menu {
     /* Tokens locales — derivados de las variables globales de style.css,
        no se inventa paleta nueva, se ordena la que ya existe. */
@@ -105,20 +219,62 @@
 
 /* Foto destacada por categoría — un solo lugar para cambiar
    la imagen o el encuadre de cada encabezado */
-#entradas-section .menu__categoria-header { --menu-thumb: url(../img/entrada/entrada.png); }
-#pizzas-section .menu__categoria-header { --menu-thumb: url(/img/pizzas/pizzas_bannner.png); --menu-thumb-pos: 65% 40%; }
-#pinsa-romana-section .menu__categoria-header { --menu-thumb: url(/img/pizzas/pizzas_bannner.png); }
-#salsas-section .menu__categoria-header { --menu-thumb: url(/img/menu/pomodoro-o-fileto.jpg); }
-#pastas-section .menu__categoria-header { --menu-thumb: url(../img/pastas/pastas.png); }
-#principales-section .menu__categoria-header { --menu-thumb: url(../img/principal/principal.png); }
-#sandwichs-section .menu__categoria-header { --menu-thumb: url(../img/sanwich/sanwich.png); }
-#ensaladas-section .menu__categoria-header { --menu-thumb: url(../img/ensaladas/ensaldas.png); }
-#menu-infantil-section .menu__categoria-header { --menu-thumb: url(/img/menu/spaghettis-o-noquis.jpg); }
-#bebidas-section .menu__categoria-header { --menu-thumb: url(/img/menu/limonada-de-la-casa.jpg); }
-#cervezas-section .menu__categoria-header { --menu-thumb: url(/img/menu/patagonia-473cc.jpg); }
-#tragos-section .menu__categoria-header { --menu-thumb: url(../img/tragos/tragos.png); }
-#vinos-section .menu__categoria-header { --menu-thumb: url(/img/menu/las-perdices-reserva.jpg); }
-#postres-section .menu__categoria-header { --menu-thumb: url(/img/menu/tiramisu.jpg); }
+#entradas-section .menu__categoria-header {
+    --menu-thumb: url(../img/entrada/entrada.png);
+}
+
+#pizzas-section .menu__categoria-header {
+    --menu-thumb: url(/img/pizzas/pizzas_bannner.png);
+    --menu-thumb-pos: 65% 40%;
+}
+
+#pinsa-romana-section .menu__categoria-header {
+    --menu-thumb: url(/img/pizzas/pizzas_bannner.png);
+}
+
+#salsas-section .menu__categoria-header {
+    --menu-thumb: url(/img/menu/pomodoro-o-fileto.jpg);
+}
+
+#pastas-section .menu__categoria-header {
+    --menu-thumb: url(../img/pastas/pastas.png);
+}
+
+#principales-section .menu__categoria-header {
+    --menu-thumb: url(../img/principal/principal.png);
+}
+
+#sandwichs-section .menu__categoria-header {
+    --menu-thumb: url(../img/sanwich/sanwich.png);
+}
+
+#ensaladas-section .menu__categoria-header {
+    --menu-thumb: url(../img/ensaladas/ensaldas.png);
+}
+
+#menu-infantil-section .menu__categoria-header {
+    --menu-thumb: url(/img/menu/spaghettis-o-noquis.jpg);
+}
+
+#bebidas-section .menu__categoria-header {
+    --menu-thumb: url(/img/menu/limonada-de-la-casa.jpg);
+}
+
+#cervezas-section .menu__categoria-header {
+    --menu-thumb: url(/img/menu/patagonia-473cc.jpg);
+}
+
+#tragos-section .menu__categoria-header {
+    --menu-thumb: url(../img/tragos/tragos.png);
+}
+
+#vinos-section .menu__categoria-header {
+    --menu-thumb: url(/img/menu/las-perdices-reserva.jpg);
+}
+
+#postres-section .menu__categoria-header {
+    --menu-thumb: url(/img/menu/tiramisu.jpg);
+}
 
 .menu__categoria-header::-webkit-details-marker {
     display: none;
@@ -155,7 +311,7 @@
     filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.5));
 }
 
-.menu__categoria[open] > .menu__categoria-header .menu__arrow {
+.menu__categoria[open]>.menu__categoria-header .menu__arrow {
     transform: rotate(180deg);
 }
 
@@ -177,7 +333,7 @@
         }
     }
 
-    .menu__categoria[open] > .menu__categoria-body {
+    .menu__categoria[open]>.menu__categoria-body {
         animation: menu-reveal 0.35s ease both;
     }
 }
@@ -233,7 +389,7 @@
     filter: none;
 }
 
-.menu__subcategoria[open] > .menu__subcategoria-header .menu__arrow {
+.menu__subcategoria[open]>.menu__subcategoria-header .menu__arrow {
     transform: rotate(180deg);
 }
 
@@ -294,8 +450,7 @@
 
 /* Fallback visual mientras no haya foto real cargada */
 .menu__card-img--fallback {
-    background: var(--color-fondo-productos)
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a7d6e' stroke-width='1.5'%3E%3Cpath d='M4 4h16v16H4z' opacity='0'/%3E%3Ccircle cx='9' cy='9' r='2'/%3E%3Cpath d='M21 15l-5-5L5 21'/%3E%3C/svg%3E") center/32px no-repeat;
+    background: var(--color-fondo-productos) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a7d6e' stroke-width='1.5'%3E%3Cpath d='M4 4h16v16H4z' opacity='0'/%3E%3Ccircle cx='9' cy='9' r='2'/%3E%3Cpath d='M21 15l-5-5L5 21'/%3E%3C/svg%3E") center/32px no-repeat;
 }
 
 .menu__card-info {
@@ -362,64 +517,166 @@
    1024px = desktop
    ============================================================ */
 
+/* ============================================================
+   RESPONSIVE — mobile first
+   768px  = tablet
+   1024px = desktop
+   ============================================================ */
+ 
 @media (min-width: 768px) {
+    .carta-header {
+        padding: 18px 32px;
+    }
+ 
+    .carta-header__logo img {
+        height: 40px;
+    }
+ 
+    .bio {
+        padding: 3.6rem 2rem 3.4rem;
+    }
+ 
+    .bio__title {
+        font-size: 2.4rem;
+    }
+ 
+    .bio__desc {
+        font-size: 1rem;
+    }
+ 
+    .carta-nav__scroll {
+        justify-content: center;
+        padding: 12px 24px;
+    }
+ 
+    .carta-nav__chip {
+        font-size: 0.78rem;
+        padding: 8px 16px;
+    }
+ 
     .menu {
         padding: 4.5rem 2.5rem 5rem;
     }
-
+ 
     .menu__title {
         font-size: 2.6rem;
     }
-
+ 
     .menu__categoria-header {
-        padding: 30px 32px;
+        padding: 20px;
         min-height: 118px;
     }
-
+ 
     .menu__categoria-nombre {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
+        padding: 8px 18px;
     }
-
+ 
+    .menu__arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+ 
     .menu__card {
         width: 232px;
     }
-
+ 
     .menu__card-img {
         height: 150px;
     }
 }
-
+ 
 @media (min-width: 1024px) {
     .menu {
         max-width: 1100px;
         padding: 5.5rem 2rem 6rem;
     }
-
+ 
     .menu__categoria-header {
-        min-height: 140px;
+        min-height: 150px;
     }
-
+ 
     .menu__categoria-nombre {
-        font-size: 1.8rem;
+        font-size: 1.45rem;
     }
-
+ 
     .menu__card {
         width: 252px;
     }
-
+ 
     .menu__card-img {
         height: 165px;
     }
-
+ 
     .menu__card-nombre {
         font-size: 1rem;
     }
-
+ 
     .menu__card-desc {
         font-size: 0.78rem;
     }
-
+ 
     .menu__card-precio {
         font-size: 0.85rem;
     }
+}
+ 
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+ 
+.carta-footer {
+    padding: 2.6rem 1.4rem 2.4rem;
+    text-align: center;
+    background: var(--menu-olive-deep, #172c10);
+}
+ 
+.carta-footer__logo {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+    margin: 0 auto 0.8rem;
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.92;
+}
+ 
+.carta-footer__horario {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.3px;
+    margin-bottom: 1.6rem;
+}
+ 
+.carta-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+ 
+.carta-footer__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: var(--color-blanco);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    padding: 8px 14px;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+ 
+.carta-footer__link:hover {
+    background: rgba(255, 255, 255, 0.12);
 }
