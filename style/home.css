@@ -626,57 +626,97 @@
 /* ============================================================
    FOOTER
    ============================================================ */
- 
+
+
 .carta-footer {
-    padding: 2.6rem 1.4rem 2.4rem;
-    text-align: center;
     background: var(--menu-olive-deep, #172c10);
+    border-top: 1px solid var(--color-hover);
+    padding: 2.6rem 1.4rem 1.4rem;
+}
+
+.carta-footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.8rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
  
-.carta-footer__logo {
+.carta-footer__logo img {
     height: 46px;
     width: auto;
     object-fit: contain;
-    margin: 0 auto 0.8rem;
-    display: block;
     filter: brightness(0) invert(1);
     opacity: 0.92;
 }
  
-.carta-footer__horario {
+.carta-footer__titulo {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.7);
-    letter-spacing: 0.3px;
-    margin-bottom: 1.6rem;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--menu-terracota, #b45526);
+    margin-bottom: 0.7rem;
 }
  
-.carta-footer__links {
+.carta-footer__col p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+ 
+.carta-footer__col p span {
+    color: var(--color-blanco);
+    font-weight: 700;
+}
+ 
+.carta-footer__col a,
+.carta-footer__link-btn {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-}
- 
-.carta-footer__link {
-    display: inline-flex;
-    align-items: center;
     gap: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: transparent;
-    color: var(--color-blanco);
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.2px;
-    padding: 8px 14px;
-    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
+    border: none;
+    background: transparent;
     cursor: pointer;
-    transition: background 0.2s ease;
+    padding: 0;
+    margin-bottom: 0.6rem;
+    transition: color 0.2s ease;
 }
  
-.carta-footer__link:hover {
-    background: rgba(255, 255, 255, 0.12);
+.carta-footer__col a:last-child,
+.carta-footer__link-btn:last-child {
+    margin-bottom: 0;
+}
+ 
+.carta-footer__col a:hover,
+.carta-footer__link-btn:hover {
+    color: var(--color-blanco);
+}
+ 
+.carta-footer__col a i,
+.carta-footer__link-btn i {
+    font-size: 1rem;
+    color: var(--menu-terracota, #b45526);
+    flex-shrink: 0;
+}
+ 
+.carta-footer__bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.5);
 }
