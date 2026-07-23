@@ -20,9 +20,9 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
     gap: 12px;
     padding: 14px 16px;
     background: var(--color-hover);
@@ -35,6 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-self: start;
     border-radius: 50%;
     border: none;
     background: transparent;
@@ -51,6 +52,7 @@
 
 .carta-header__logo {
     display: flex;
+    justify-self: center;
     align-items: center;
     justify-content: center;
     flex: 1;
@@ -70,6 +72,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
+    justify-self: end;
     letter-spacing: 0.3px;
     color: var(--color-blanco);
     background: var(--color-hover);
@@ -127,6 +130,9 @@
 }
 
 
+/* ============================================================
+   MENU — sección "Carta"
+   ============================================================ */
 
 .menu {
     /* Tokens locales — derivados de las variables globales de style.css,
@@ -193,6 +199,29 @@
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 6px 18px rgba(43, 36, 32, 0.12);
+    /* Animación de entrada — alterna izquierda/derecha según el orden.
+       El JS (scroll-animations.js) agrega .is-visible vía IntersectionObserver
+       la primera vez que la categoría entra en pantalla. */
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.menu__categoria:nth-of-type(even) {
+    transform: translateX(60px);
+}
+
+.menu__categoria.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu__categoria {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 .menu__categoria-header {
@@ -214,6 +243,7 @@
         var(--menu-thumb);
     background-size: cover;
     background-position: var(--menu-thumb-pos);
+    background-color: var(--menu-olive-deep);
     transition: filter 0.25s ease;
 }
 
@@ -284,11 +314,6 @@
     filter: brightness(1.08);
 }
 
-/* si la imagen no carga (placeholder no subido todavía), cae en el verde de marca */
-.menu__categoria-header {
-    background-color: var(--menu-olive-deep);
-}
-
 .menu__categoria-nombre {
     flex: 1;
     font-family: 'Fraunces', 'Montserrat', serif;
@@ -311,7 +336,7 @@
     filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.5));
 }
 
-.menu__categoria[open]>.menu__categoria-header .menu__arrow {
+.menu__categoria[open] > .menu__categoria-header .menu__arrow {
     transform: rotate(180deg);
 }
 
@@ -333,7 +358,7 @@
         }
     }
 
-    .menu__categoria[open]>.menu__categoria-body {
+    .menu__categoria[open] > .menu__categoria-body {
         animation: menu-reveal 0.35s ease both;
     }
 }
@@ -389,7 +414,7 @@
     filter: none;
 }
 
-.menu__subcategoria[open]>.menu__subcategoria-header .menu__arrow {
+.menu__subcategoria[open] > .menu__subcategoria-header .menu__arrow {
     transform: rotate(180deg);
 }
 
@@ -511,127 +536,33 @@
     box-sizing: border-box;
 }
 
-/* ============================================================
-   RESPONSIVE — mobile first
-   768px  = tablet
-   1024px = desktop
-   ============================================================ */
-
-/* ============================================================
-   RESPONSIVE — mobile first
-   768px  = tablet
-   1024px = desktop
-   ============================================================ */
- 
-@media (min-width: 768px) {
-    .carta-header {
-        padding: 18px 32px;
-    }
- 
-    .carta-header__logo img {
-        height: 40px;
-    }
- 
-    .bio {
-        padding: 3.6rem 2rem 3.4rem;
-    }
- 
-    .bio__title {
-        font-size: 2.4rem;
-    }
- 
-    .bio__desc {
-        font-size: 1rem;
-    }
- 
-    .carta-nav__scroll {
-        justify-content: center;
-        padding: 12px 24px;
-    }
- 
-    .carta-nav__chip {
-        font-size: 0.78rem;
-        padding: 8px 16px;
-    }
- 
-    .menu {
-        padding: 4.5rem 2.5rem 5rem;
-    }
- 
-    .menu__title {
-        font-size: 2.6rem;
-    }
- 
-    .menu__categoria-header {
-        padding: 20px;
-        min-height: 118px;
-    }
- 
-    .menu__categoria-nombre {
-        font-size: 1.3rem;
-        padding: 8px 18px;
-    }
- 
-    .menu__arrow {
-        width: 36px;
-        height: 36px;
-        font-size: 1.1rem;
-    }
- 
-    .menu__card {
-        width: 232px;
-    }
- 
-    .menu__card-img {
-        height: 150px;
-    }
-}
- 
-@media (min-width: 1024px) {
-    .menu {
-        max-width: 1100px;
-        padding: 5.5rem 2rem 6rem;
-    }
- 
-    .menu__categoria-header {
-        min-height: 150px;
-    }
- 
-    .menu__categoria-nombre {
-        font-size: 1.45rem;
-    }
- 
-    .menu__card {
-        width: 252px;
-    }
- 
-    .menu__card-img {
-        height: 165px;
-    }
- 
-    .menu__card-nombre {
-        font-size: 1rem;
-    }
- 
-    .menu__card-desc {
-        font-size: 0.78rem;
-    }
- 
-    .menu__card-precio {
-        font-size: 0.85rem;
-    }
-}
- 
 
 /* ============================================================
    FOOTER
    ============================================================ */
 
-
 .carta-footer {
     background: var(--menu-olive-deep, #172c10);
     border-top: 1px solid var(--color-hover);
     padding: 2.6rem 1.4rem 1.4rem;
+    /* Animación de entrada — sube despacio desde abajo.
+       El JS (scroll-animations.js) agrega .is-visible al entrar en pantalla. */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.carta-footer.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carta-footer {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 .carta-footer__container {
@@ -643,7 +574,7 @@
     max-width: 900px;
     margin: 0 auto;
 }
- 
+
 .carta-footer__logo img {
     height: 46px;
     width: auto;
@@ -651,7 +582,7 @@
     filter: brightness(0) invert(1);
     opacity: 0.92;
 }
- 
+
 .carta-footer__titulo {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.68rem;
@@ -661,55 +592,58 @@
     color: var(--menu-terracota, #b45526);
     margin-bottom: 0.7rem;
 }
- 
+
 .carta-footer__col p {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.6;
 }
- 
+
 .carta-footer__col p span {
     color: var(--color-blanco);
     font-weight: 700;
 }
- 
+
 .carta-footer__col a,
 .carta-footer__link-btn {
-    display: flex;
+    display: grid;
+    grid-template-columns: 20px 1fr;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
+    gap: 8px;
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto 0.6rem;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
+    text-align: left;
     border: none;
     background: transparent;
     cursor: pointer;
     padding: 0;
-    margin-bottom: 0.6rem;
     transition: color 0.2s ease;
 }
- 
+
 .carta-footer__col a:last-child,
 .carta-footer__link-btn:last-child {
     margin-bottom: 0;
 }
- 
+
 .carta-footer__col a:hover,
 .carta-footer__link-btn:hover {
     color: var(--color-blanco);
 }
- 
+
 .carta-footer__col a i,
 .carta-footer__link-btn i {
     font-size: 1rem;
     color: var(--menu-terracota, #b45526);
     flex-shrink: 0;
 }
- 
+
 .carta-footer__bottom {
     text-align: center;
     margin-top: 2rem;
@@ -719,4 +653,110 @@
     font-size: 0.68rem;
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ============================================================
+   RESPONSIVE — mobile first
+   768px  = tablet
+   1024px = desktop
+   ============================================================ */
+
+@media (min-width: 768px) {
+    .carta-header {
+        padding: 18px 32px;
+    }
+
+    .carta-header__logo img {
+        height: 40px;
+    }
+
+    .bio {
+        padding: 3.6rem 2rem 3.4rem;
+    }
+
+    .bio__title {
+        font-size: 2.4rem;
+    }
+
+    .bio__desc {
+        font-size: 1rem;
+    }
+
+    .carta-nav__scroll {
+        justify-content: center;
+        padding: 12px 24px;
+    }
+
+    .carta-nav__chip {
+        font-size: 0.78rem;
+        padding: 8px 16px;
+    }
+
+    .menu {
+        padding: 4.5rem 2.5rem 5rem;
+    }
+
+    .menu__title {
+        font-size: 2.6rem;
+    }
+
+    .menu__categoria-header {
+        padding: 20px;
+        min-height: 118px;
+    }
+
+    .menu__categoria-nombre {
+        font-size: 1.3rem;
+        padding: 8px 18px;
+    }
+
+    .menu__arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+
+    .menu__card {
+        width: 232px;
+    }
+
+    .menu__card-img {
+        height: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .menu {
+        max-width: 1100px;
+        padding: 5.5rem 2rem 6rem;
+    }
+
+    .menu__categoria-header {
+        min-height: 150px;
+    }
+
+    .menu__categoria-nombre {
+        font-size: 1.45rem;
+    }
+
+    .menu__card {
+        width: 252px;
+    }
+
+    .menu__card-img {
+        height: 165px;
+    }
+
+    .menu__card-nombre {
+        font-size: 1rem;
+    }
+
+    .menu__card-desc {
+        font-size: 0.78rem;
+    }
+
+    .menu__card-precio {
+        font-size: 0.85rem;
+    }
 }

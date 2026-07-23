@@ -38,7 +38,7 @@
     width: 100%;
     max-width: 260px;
     margin: 0 auto;
-    filter: drop-shadow(0 0 12px var(--color-hover)) drop-shadow(0 0 24px var(--color-hover));
+    filter: drop-shadow(0 0 2px var(--color-hover)) drop-shadow(0 0 3px var(--color-hover));
 }
 
 

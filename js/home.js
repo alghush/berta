@@ -48,3 +48,28 @@ if ('IntersectionObserver' in window) {
 
     secciones.forEach(sec => observer.observe(sec));
 }
+
+/* ============================================================
+   SCROLL-ANIMATIONS.JS
+   Agrega la clase .is-visible cuando un elemento entra en pantalla,
+   usando IntersectionObserver (nativo, sin librerías).
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elementos = document.querySelectorAll('.menu__categoria, .carta-footer');
+
+    if (!elementos.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // se anima una sola vez
+            }
+        });
+    }, {
+        threshold: 0.15 // se dispara cuando el 15% del elemento es visible
+    });
+
+    elementos.forEach((el) => observer.observe(el));
+});

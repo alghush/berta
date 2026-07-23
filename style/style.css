@@ -17,6 +17,10 @@ p {
     padding: 0;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -32,7 +36,7 @@ body {
     --color-secundary: #8a7d6e;
 
     --color-primary: #b5552689;
-    --color-hover: #223917f7;
+    --color-hover: #223917d6;
     --color-text: #2b2420;
 
     --color-fondo-productos: #f3ece2;
