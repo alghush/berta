@@ -91,10 +91,11 @@
 
 .bio {
     padding: 3.5rem 1rem 4rem;
+    margin: 0 auto 2rem;
     max-width: 900px;
     text-align: center;
     background:
-        radial-gradient(circle at 15% 0%, #ffffff55, transparent 55%);
+        radial-gradient(circle at 50% 0%, #ffffffd2, transparent 55%);
     position: relative;
 }
 
